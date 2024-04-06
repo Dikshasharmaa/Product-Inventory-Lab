@@ -1,14 +1,16 @@
 package Models;
 
 public class Whiskey {
+    private int id;
     private int quantity;
     private float price;
     private String brand;
 
-    public Whiskey(String brand, int quantity, float price) {
-        brand = " ";
-        quantity = 20;
-        price = 580.00f;
+    public Whiskey(int id, String brand, int quantity, float price) {
+        this.id = id;
+        this.brand = brand;
+        this.quantity = quantity;
+        this.price = price;
     }
 
     public int getQuantity() {
@@ -33,5 +35,13 @@ public class Whiskey {
 
     public void setBrand(String brand) {
         this.brand = brand;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
