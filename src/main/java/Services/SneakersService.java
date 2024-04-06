@@ -22,4 +22,29 @@ public class SneakersService {
     public List<Sneakers> getInventory() {
         return inventory;
     }
+    public Sneakers findSneaker(int id){
+        for(Sneakers s : inventory){
+            if(s.getId().equals(id)){
+               return s;
+            }
+        }
+        return null;
+    }
+    public Sneakers[] findAll() {
+        // should return a basic array copy of the ArrayList
+        Sneakers[] array = new Sneakers[inventory.size()];
+        return inventory.toArray(array);
+    }
+    public boolean delete(int id) {
+        // should remove the object with this id from the ArrayList if exits and return true.
+        // Otherwise, return false
+        for (Sneakers s : inventory) {
+            if (s.getId().equals(id)) {
+                inventory.remove(id);
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
