@@ -9,20 +9,30 @@ public class Sneakers {
     private int quantity;
     private float price;
 
-    public String getName() {
-        return name;
-    }
+    public Sneakers(int id, String name, String brand, String sport,
+                    int quantity, float price) {
+        id = 6;
+        name = " ";
+        brand= " ";
+        sport = " ";
+        quantity = 10;
+        price = 80.00f;
 
-    public void setName(String name) {
-        this.name = name;
     }
-
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getBrand() {

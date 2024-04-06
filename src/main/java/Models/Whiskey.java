@@ -5,6 +5,12 @@ public class Whiskey {
     private float price;
     private String brand;
 
+    public Whiskey(String brand, int quantity, float price) {
+        brand = " ";
+        quantity = 20;
+        price = 580.00f;
+    }
+
     public int getQuantity() {
         return quantity;
     }

@@ -4,12 +4,25 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class WhiskeyTest {
+
+    @Test
+    public void TestConstructor(){
+        String expectedBrand = "Crown Royal Canadian";
+        int expectedQuantity = 10;
+        float expectedPrice = 580.00f;
+
+        Whiskey testWhiskey = new Whiskey(expectedBrand, expectedQuantity,expectedPrice);
+        Assertions.assertEquals(expectedBrand, testWhiskey.getBrand());
+        Assertions.assertEquals(expectedQuantity, testWhiskey.getQuantity());
+        Assertions.assertEquals(expectedPrice, testWhiskey.getPrice());
+
+    }
     @Test
     public void SetBrandTest(){
         //Given
-        String expected = "Nike";
+        String expected = "Crown Royal Canadian";
         //when
-        Whiskey testBrand = new Whiskey();
+        Whiskey testBrand = new Whiskey("Crown Royal Canadian",0,0);
         testBrand.setBrand(expected);
         //then
         Assertions.assertEquals(expected,testBrand.getBrand());
@@ -20,7 +33,7 @@ public class WhiskeyTest {
         //Given
         int expected = 2;
         //when
-        Whiskey testQnty = new Whiskey();
+        Whiskey testQnty = new Whiskey("Crown Royal Canadian",20,0);
         testQnty.setQuantity(expected);
         //then
         Assertions.assertEquals(expected,testQnty.getQuantity());
@@ -30,7 +43,7 @@ public class WhiskeyTest {
         //Given
         int expected = 200;
         //when
-        Whiskey testPrice = new Whiskey();
+        Whiskey testPrice = new Whiskey("Crown Royal Canadian",0,580.00f);
         testPrice.setPrice(expected);
         //then
         Assertions.assertEquals(expected,testPrice.getPrice());

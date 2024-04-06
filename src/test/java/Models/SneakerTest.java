@@ -5,11 +5,30 @@ import org.junit.jupiter.api.Test;
 
 public class SneakerTest {
     @Test
+    public void ConstructorTest(){
+        int expectedId = 6;
+        String expectedName = "Stan Smith";
+        String expectedBrand = "Nike";
+        String expectedSport = "Tennis";
+        int expectedQuantity = 10;
+        float expectedPrice = 80.00f;
+
+        Sneakers testSneakers = new Sneakers(expectedId, expectedName, expectedBrand,
+                expectedSport, expectedQuantity,expectedPrice);
+
+        Assertions.assertEquals(expectedId, testSneakers.getId());
+        Assertions.assertEquals(expectedName, testSneakers.getName());
+        Assertions.assertEquals(expectedBrand, testSneakers.getBrand());
+        Assertions.assertEquals(expectedSport, testSneakers.getSport());
+        Assertions.assertEquals(expectedQuantity, testSneakers.getQuantity());
+        Assertions.assertEquals(expectedPrice, testSneakers.getPrice());
+    }
+    @Test
     public void SetNameTest(){
         //Given
-        String expected = "CH324";
+        String expected = "Stan Smith";
         //when
-        Sneakers testName = new Sneakers();
+        Sneakers testName = new Sneakers(6,"Stan Smith","Nike","Tennis",10,80.00f);
         testName.setName(expected);
         //then
         Assertions.assertEquals(expected,testName.getName());
@@ -18,9 +37,9 @@ public class SneakerTest {
     @Test
     public void SetIdTest(){
         //Given
-        int expected = 1;
+        int expected = 6;
         //when
-        Sneakers testId = new Sneakers();
+        Sneakers testId = new Sneakers(6,"Stan Smith","Nike","Tennis",10,80.00f);
         testId.setId(expected);
         //then
         Assertions.assertEquals(expected,testId.getId());
@@ -31,7 +50,7 @@ public class SneakerTest {
         //Given
         String expected = "Nike";
         //when
-        Sneakers testBrand = new Sneakers();
+        Sneakers testBrand = new Sneakers(6,"Stan Smith","Nike","Tennis",10,80.00f);
         testBrand.setBrand(expected);
         //then
         Assertions.assertEquals(expected,testBrand.getBrand());
@@ -42,7 +61,7 @@ public class SneakerTest {
         //Given
         String expected = "Soccer";
         //when
-        Sneakers testSport = new Sneakers();
+        Sneakers testSport = new Sneakers(6,"Stan Smith","Nike","Tennis",10,80.00f);
         testSport.setSport(expected);
         //then
         Assertions.assertEquals(expected,testSport.getSport());
@@ -52,7 +71,7 @@ public class SneakerTest {
         //Given
         int expected = 9;
         //when
-        Sneakers testSize = new Sneakers();
+        Sneakers testSize = new Sneakers(6,"Stan Smith","Nike","Tennis",10,80.00f);
         testSize.setSize(expected);
         //then
         Assertions.assertEquals(expected,testSize.getSize());
@@ -62,7 +81,7 @@ public class SneakerTest {
         //Given
         int expected = 2;
         //when
-        Sneakers testQnty = new Sneakers();
+        Sneakers testQnty = new Sneakers(6,"Stan Smith","Nike","Tennis",10,80.00f);
         testQnty.setQuantity(expected);
         //then
         Assertions.assertEquals(expected,testQnty.getQuantity());
@@ -73,11 +92,12 @@ public class SneakerTest {
         //Given
         int expected = 200;
         //when
-        Sneakers testPrice = new Sneakers();
+        Sneakers testPrice = new Sneakers(6,"Stan Smith","Nike","Tennis",10,80.00f);
         testPrice.setPrice(expected);
         //then
         Assertions.assertEquals(expected,testPrice.getPrice());
     }
+
 
 
 }
