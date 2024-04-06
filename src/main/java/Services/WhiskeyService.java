@@ -1,4 +1,5 @@
 package Services;
+import Models.Sneakers;
 import Models.Whiskey;
 
 import java.util.ArrayList;
@@ -16,5 +17,30 @@ public class WhiskeyService {
 
     public List<Whiskey> getWhiskyInventory() {
         return WhiskyInventory;
+    }
+
+    public Whiskey findWhiskey(int id){
+        for(Whiskey w : WhiskyInventory){
+            if(w.getId() == id){
+                return w;
+            }
+        }
+        return null;
+    }
+    public Whiskey[] findAll() {
+        // should return a basic array copy of the ArrayList
+        Whiskey[] array = new Whiskey[WhiskyInventory.size()];
+        return WhiskyInventory.toArray(array);
+    }
+    public boolean delete(int id) {
+        // should remove the object with this id from the ArrayList if exits and return true.
+        // Otherwise, return false
+        for (Whiskey w : WhiskyInventory) {
+            if (w.getId() == id) {
+                WhiskyInventory.remove(id);
+                return true;
+            }
+        }
+        return false;
     }
 }
