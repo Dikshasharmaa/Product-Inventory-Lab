@@ -175,7 +175,7 @@ public class Console {
     }
     public static void updateProduct(SneakersService ss, WhiskeyService ws) {
         while (true) {
-            System.out.println("Choose product you want to read by writing 1 or 2 \n"+
+            System.out.println("Choose product you want to update by writing 1 or 2 \n"+
                     "1. Sneakers\n2. Whiskey");
             Scanner sc = new Scanner(System.in);
             int userInput = sc.nextInt();
@@ -219,5 +219,67 @@ public class Console {
         float price = sc.nextFloat();
         w.setPrice(price);
 
+    }
+
+    public static void deleteProduct(SneakersService ss, WhiskeyService ws) {
+        while (true) {
+            System.out.println("Choose product you want to delete by writing 1 or 2 \n"+
+                    "1. Sneakers\n2. Whiskey");
+            Scanner sc = new Scanner(System.in);
+            int userInput = sc.nextInt();
+
+            switch (userInput) {
+                case 1:
+                    readSneaker(ss);
+                    System.out.println("Choose id you want to delete");
+                    int productId = sc.nextInt();
+                    System.out.println("Item Deleted: "+ss.delete(productId));
+                    return;
+                case 2:
+                    readWhiskey(ws);
+                    System.out.println("Choose id you want to delete");
+                    int productId1 = sc.nextInt();
+                    System.out.println("Item Deleted: "+ws.delete(productId1));
+                    return;
+                default:
+                    System.out.println("Try Again\n");
+                    displayMainMenu();
+                    break;
+
+            }
+        }
+
+    }
+
+    public static void getTotalInventory(SneakersService ss, WhiskeyService ws) {
+        while (true) {
+            System.out.println("Choose product you want to get total inventory by writing 1 or 2 \n"+
+                    "1. Sneakers\n2. Whiskey");
+            Scanner sc = new Scanner(System.in);
+            int userInput = sc.nextInt();
+
+            switch (userInput) {
+                case 1:
+                    int totalInventory = 0;
+                    for(Sneakers s : ss.getInventory()){
+                        totalInventory += s.getQuantity();
+                    }
+                    System.out.println("Total sneakers in inventory is: "+totalInventory);
+
+                    return;
+                case 2:
+                    int totalInventoryWhiskey = 0;
+                    for(Whiskey w : ws.getWhiskyInventory()){
+                        totalInventoryWhiskey += w.getQuantity();
+                    }
+                    System.out.println("Total whiskey in inventory is: "+ totalInventoryWhiskey);
+                    return;
+                default:
+                    System.out.println("Try Again\n");
+                    displayMainMenu();
+                    break;
+
+            }
+        }
     }
 }

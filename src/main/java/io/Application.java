@@ -27,8 +27,15 @@ public class Application {
                     break;
                 case "Update":
                     Console.updateProduct(sneakerService, whiskeyService);
-
-
+                    break;
+                case "Delete":
+                    Console.deleteProduct(sneakerService, whiskeyService);
+                    break;
+                case "Reports" :
+                    Console.getTotalInventory(sneakerService,whiskeyService);
+                default:
+                    System.out.println("Wrong Input");
+                    break;
             }
         }
 

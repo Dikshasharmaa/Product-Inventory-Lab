@@ -38,9 +38,9 @@ public class SneakersService {
     public boolean delete(int id) {
         // should remove the object with this id from the ArrayList if exits and return true.
         // Otherwise, return false
-        for (Sneakers s : inventory) {
-            if (s.getId().equals(id)) {
-                inventory.remove(id);
+        for (int i =0;i<inventory.size();i++) {
+            if (inventory.get(i).getId().equals(id)) {
+                inventory.remove(i);
                 return true;
             }
         }

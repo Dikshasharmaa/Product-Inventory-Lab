@@ -35,9 +35,9 @@ public class WhiskeyService {
     public boolean delete(int id) {
         // should remove the object with this id from the ArrayList if exits and return true.
         // Otherwise, return false
-        for (Whiskey w : WhiskyInventory) {
-            if (w.getId() == id) {
-                WhiskyInventory.remove(id);
+        for (int i =0;i<WhiskyInventory.size();i++) {
+            if (WhiskyInventory.get(i).getId() == id) {
+                WhiskyInventory.remove(i);
                 return true;
             }
         }
