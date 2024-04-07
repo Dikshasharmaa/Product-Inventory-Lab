@@ -1,8 +1,14 @@
 package Services;
 import Models.Sneakers;
 import Models.Whiskey;
+import Utils.CSVUtils;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class WhiskeyService {
@@ -42,5 +48,48 @@ public class WhiskeyService {
             }
         }
         return false;
+    }
+    public void saveData() throws IOException {
+        String csvFile = "/Users/diksha/Desktop/projects-2/Product-Inventory-Lab/Whiskey.csv";
+        FileWriter writer = new FileWriter(csvFile);
+
+        CSVUtils.writeLine(writer, new ArrayList<String>(Arrays.asList(String.valueOf(nextId))));
+
+        for (Whiskey w : WhiskyInventory) {
+            List<String> list = new ArrayList<>();
+            list.add(String.valueOf(w.getId()));
+            list.add(w.getBrand());
+            list.add(String.valueOf(w.getQuantity()));
+            list.add(String.valueOf(w.getPrice()));
+
+            CSVUtils.writeLine(writer, list);
+        }
+
+        writer.flush();
+        writer.close();
+    }
+
+    public void loadData(){
+        String csvFile = "/Users/diksha/Desktop/projects-2/Product-Inventory-Lab/Whiskey.csv";
+        String line = "";
+        String csvSplitBy = ",";
+
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            nextId = Integer.parseInt(br.readLine());
+
+            while ((line = br.readLine()) != null) {
+                // split line with comma
+                String[] beer = line.split(csvSplitBy);
+
+                int id = Integer.parseInt(beer[0]);
+                String brand = beer[1];
+                int quantity = Integer.parseInt(beer[2]);
+                float price = Float.parseFloat(beer[3]);
+
+                WhiskyInventory.add(new Whiskey(id, brand, quantity, price));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

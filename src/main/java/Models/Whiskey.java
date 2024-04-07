@@ -48,4 +48,5 @@ public class Whiskey {
     public String toString(){
         return "Id: "+this.id +", Brand: "+this.brand + ", Quantity: "+ this.quantity+ ", Price: "+ this.price;
     }
+
 }

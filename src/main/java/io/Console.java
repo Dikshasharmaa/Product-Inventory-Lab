@@ -17,12 +17,14 @@ public class Console {
                 "**************************************************\n");
     }
     public static void displayMainMenu(){
-        System.out.println("Main Menu\n Choose between 1-6 \n"+"1. Create products to be added to inventory\n" +
+        System.out.println("Main Menu\n Choose between 1-8 \n"+"1. Create products to be added to inventory\n" +
                 "2. Read from existing products\n" +
                 "3. Update products\n" +
                 "4. Delete products\n" +
                 "5. Get different reports about products\n" +
-                "6. Exit the program");
+                "6. Save Data\n"+
+                "7. Load Data\n"+
+                "8. Exit the program");
 
     }
     public static String getActionFromUser() {
@@ -42,6 +44,10 @@ public class Console {
                 case 5:
                     return "Reports";
                 case 6:
+                    return "Save";
+                case 7:
+                    return "Load";
+                case 8:
                     System.exit(0);
                 default:
                     System.out.println("Try Again\n");
@@ -56,11 +62,11 @@ public class Console {
     public static void createSneaker(SneakersService ss){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter name:");
-        String name = sc.next();
+        String name = sc.nextLine();
         System.out.println("Enter brand:");
-        String brand = sc.next();
+        String brand = sc.nextLine();
         System.out.println("Enter sport:");
-        String sport = sc.next();
+        String sport = sc.nextLine();
         System.out.println("Enter size:");
         float size = sc.nextFloat();
         System.out.println("Enter quantity:");
@@ -73,17 +79,17 @@ public class Console {
     public static void updateSneaker(Sneakers s){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter name:");
-        String name = sc.next();
+        String name = sc.nextLine();
         if(name!=null){
             s.setName(name);
         }
         System.out.println("Enter brand:");
-        String brand = sc.next();
+        String brand = sc.nextLine();
         if(brand!=null){
             s.setBrand(brand);
         }
         System.out.println("Enter sport:");
-        String sport = sc.next();
+        String sport = sc.nextLine();
         if(sport!=null){
             s.setSport(sport);
         }
@@ -104,7 +110,7 @@ public class Console {
     public static void createWhiskey(WhiskeyService ws){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter brand:");
-        String brand = sc.next();
+        String brand = sc.nextLine();
         System.out.println("Enter quantity:");
         int quantity = sc.nextInt();
         System.out.println("Enter price:");
@@ -207,7 +213,7 @@ public class Console {
     private static void updateWhiskey(Whiskey w) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter brand:");
-        String brand = sc.next();
+        String brand = sc.nextLine();
         if(brand!=null){
             w.setBrand(brand);
         }
