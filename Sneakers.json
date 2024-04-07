@@ -1,0 +1,9 @@
+[ {
+  "id" : 1,
+  "name" : "cherry",
+  "brand" : "nike",
+  "sport" : "soccer",
+  "size" : 5.0,
+  "quantity" : 56,
+  "price" : 543.0
+} ]
