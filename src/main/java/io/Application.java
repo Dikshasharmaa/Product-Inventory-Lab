@@ -3,6 +3,8 @@ package io;
 import Services.SneakersService;
 import Services.WhiskeyService;
 
+import java.util.Scanner;
+
 public class Application {
     private SneakersService sneakerService = new SneakersService();
     private WhiskeyService whiskeyService = new WhiskeyService();
@@ -13,7 +15,25 @@ public class Application {
 
     private void init() {
         Console.printWelcome();
-        Console.displayMainMenu();
+        while(true){
+            Console.displayMainMenu();
+            String action = Console.getActionFromUser();
+            switch (action){
+                case "Create":
+                    Console.createProduct(sneakerService, whiskeyService);
+                    break;
+                case "Read":
+                    Console.readProduct(sneakerService, whiskeyService);
+                    break;
+                case "Update":
+                    Console.updateProduct(sneakerService, whiskeyService);
+
+
+            }
+        }
+
     }
 
-}
+
+    }
+

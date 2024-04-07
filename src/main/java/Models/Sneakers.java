@@ -9,7 +9,7 @@ public class Sneakers {
     private int quantity;
     private float price;
 
-    public Sneakers(Integer id, String name, String brand, String sport,float size,
+    public Sneakers(Integer id, String name, String brand, String sport, float size,
                     int quantity, float price) {
         this.id = id;
         this.name = name;
@@ -75,4 +75,11 @@ public class Sneakers {
     public void setPrice(float price) {
         this.price = price;
     }
+    @Override
+    public String toString(){
+        return "Id: "+this.id + ", Name: "+ this.name +", Brand: "+this.brand +", Sport: "+ this.sport +", Size: "+ this.size+
+                ", Quantity: "+ this.quantity+ ", Price: "+ this.price;
+    }
 }
+
+

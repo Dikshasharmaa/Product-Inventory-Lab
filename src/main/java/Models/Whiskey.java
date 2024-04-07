@@ -44,4 +44,8 @@ public class Whiskey {
     public void setId(int id) {
         this.id = id;
     }
+    @Override
+    public String toString(){
+        return "Id: "+this.id +", Brand: "+this.brand + ", Quantity: "+ this.quantity+ ", Price: "+ this.price;
+    }
 }
