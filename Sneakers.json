@@ -1,9 +1,9 @@
 [ {
   "id" : 1,
-  "name" : "cherry",
-  "brand" : "nike",
-  "sport" : "soccer",
-  "size" : 5.0,
-  "quantity" : 56,
-  "price" : 543.0
+  "name" : "a",
+  "brand" : "b",
+  "sport" : "c",
+  "size" : 123.0,
+  "quantity" : 1234,
+  "price" : 1.0
 } ]
