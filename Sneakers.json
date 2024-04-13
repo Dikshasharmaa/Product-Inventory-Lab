@@ -1,0 +1,33 @@
+[ {
+  "id" : 1,
+  "name" : "gh12",
+  "brand" : "puma",
+  "sport" : "basketball",
+  "size" : 8.0,
+  "quantity" : 8,
+  "price" : 99.0
+}, {
+  "id" : 2,
+  "name" : "bgh12",
+  "brand" : "adidas",
+  "sport" : "soccer",
+  "size" : 8.0,
+  "quantity" : 6,
+  "price" : 78.0
+}, {
+  "id" : 3,
+  "name" : "cgy12",
+  "brand" : "nike",
+  "sport" : "fotball",
+  "size" : 7.0,
+  "quantity" : 8,
+  "price" : 98.0
+}, {
+  "id" : 4,
+  "name" : "hh32",
+  "brand" : "Sketchers",
+  "sport" : "tennis",
+  "size" : 7.0,
+  "quantity" : 5,
+  "price" : 45.0
+} ]
