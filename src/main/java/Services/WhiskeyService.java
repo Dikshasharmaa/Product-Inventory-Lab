@@ -56,6 +56,15 @@ public class WhiskeyService {
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
         writer.writeValue(new File(jsonFile), WhiskyInventory);
+        try {
+            FileWriter myWriter = new FileWriter("Whiskey.txt");
+            myWriter.write("nextId : "+ this.nextId);
+            myWriter.close();
+            //System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
     }
 //        String csvFile = "/Users/diksha/Desktop/projects-2/Product-Inventory-Lab/Whiskey.csv";
 //        FileWriter writer = new FileWriter(csvFile);
@@ -80,6 +89,7 @@ public class WhiskeyService {
         String jsonFile = "/Users/diksha/Desktop/projects-2/Product-Inventory-Lab/Whiskey.json";
         ObjectMapper objectMapper = new ObjectMapper();
         this.WhiskyInventory = objectMapper.readValue(new File(jsonFile), new TypeReference<List<Whiskey>>(){});
+        this.nextId = WhiskyInventory.size()+1;
 
     }
 //        String csvFile = "/Users/diksha/Desktop/projects-2/Product-Inventory-Lab/Whiskey.csv";

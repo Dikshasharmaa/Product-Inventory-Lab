@@ -54,11 +54,21 @@ public class SneakersService {
         return false;
     }
     public void saveData() throws IOException {
-        String jsonFile = "/Users/diksha/Desktop/projects-2/Product-Inventory-Lab/Sneakers.json";
+        //String jsonFile = "/Users/diksha/Desktop/projects-2/Product-Inventory-Lab/Sneakers.json";
         //FileWriter writer = new FileWriter(csvFile);
         ObjectMapper mapper = new ObjectMapper();
         ObjectWriter writer = mapper.writer(new DefaultPrettyPrinter());
-        writer.writeValue(new File(jsonFile), inventory);
+        writer.writeValue(new File("/Users/diksha/Desktop/projects-2/Product-Inventory-Lab/Sneakers.json"), inventory);
+        try {
+            FileWriter myWriter = new FileWriter("Sneakers.txt");
+            myWriter.write("nextId : "+ this.nextId);
+            myWriter.close();
+            //System.out.println("Successfully wrote to the file.");
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
 
 //        CSVUtils.writeLine(writer, new ArrayList<String>(Arrays.asList(String.valueOf(nextId))));
 //
@@ -82,6 +92,7 @@ public class SneakersService {
         String jsonFile = "/Users/diksha/Desktop/projects-2/Product-Inventory-Lab/Sneakers.json";
         ObjectMapper objectMapper = new ObjectMapper();
         this.inventory = objectMapper.readValue(new File(jsonFile), new TypeReference<List<Sneakers>>(){});
+        this.nextId = inventory.size()+1;
 //        String line = "";
 //        String csvSplitBy = ",";
 //

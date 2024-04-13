@@ -20,6 +20,9 @@ public class Sneakers {
         this.price = price;
 
     }
+    public Sneakers(){
+
+    }
     public Integer getId() {
         return id;
     }

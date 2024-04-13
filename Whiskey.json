@@ -1,1 +1,16 @@
-[ ]
+[ {
+  "id" : 1,
+  "quantity" : 5,
+  "price" : 56.0,
+  "brand" : "jack"
+}, {
+  "id" : 2,
+  "quantity" : 6,
+  "price" : 87.0,
+  "brand" : "black"
+}, {
+  "id" : 3,
+  "quantity" : 7,
+  "price" : 54.0,
+  "brand" : "abc"
+} ]

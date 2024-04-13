@@ -12,6 +12,9 @@ public class Whiskey {
         this.quantity = quantity;
         this.price = price;
     }
+    public Whiskey(){
+
+    }
 
     public int getQuantity() {
         return quantity;
